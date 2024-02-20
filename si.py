@@ -57,4 +57,3 @@ while menu != 3:
 
         case 3:
             print("Hasta luego")
-
