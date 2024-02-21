@@ -1,0 +1,6 @@
+(defun amenosq(a b)
+(unless (< a b)
+(print a)
+(print b)
+)
+)
