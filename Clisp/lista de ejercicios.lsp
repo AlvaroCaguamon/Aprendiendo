@@ -40,3 +40,17 @@
 (setq valor-otras-propiedades (read))
 
 (evaluar-prestamo historia-credito cantidad-pedida salario-anual valor-otras-propiedades)
+
+
+
+
+(format t "Ingrese una letra minúscula: ")
+(setq letra (read-char))
+
+(cond ((member letra '(#\a #\e #\i #\o #\u))
+       (format t "Vocal.~%"))
+      ((char= letra #\y)
+       (format t "Semivocal.~%"))
+      ((and (>= letra #\a) (<= letra #\z))
+       (format t "Consonante.~%"))
+      (t (format t "Caracter inválido.~%")))
