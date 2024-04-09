@@ -2,7 +2,7 @@ padre(gilberto, alvaro).
 padre(gilberto, armando).
 padre(gilberto, gilbertojr).
 padre(alvaro, erik).
-padre(alvaro, alvaro). % Te añadí a ti mismo como hijo de Alvaro
+padre(alvaro, alvaro). 
 padre(armando, mandin).
 padre(armando, fernando).
 padre(cesar, erik).
