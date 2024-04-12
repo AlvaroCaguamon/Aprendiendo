@@ -24,3 +24,4 @@ tio(X, Y):- padre(Z, Y), hermano(X, Z).
 
 % Regla para determinar los nietos
 nieto(X, Y):- abuelo(Y, X).
+

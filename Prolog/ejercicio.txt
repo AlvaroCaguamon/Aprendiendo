@@ -1,0 +1,15 @@
+-La Tierra es un planeta 
+-La luna no es un planeta
+-La luna es un satélite
+-La Tierra gira alrededor del sol
+-Todo planeta es un satélite 
+-Todo planeta gira alrededor del sol.
+-Algún planeta gira alrededor de la luna.
+-Hay por lo menos un satélite
+-Todos los perros del vecino muerden Algún cartero
+-Hay un cartero al que lo muerden Todos los perros
+-Todos los carteros son mordidos por Algún perro
+-Hay un perro que muerde a todos los carteros
+-Todos los perros que asustan a Algún cartero, lo muerden
+-Hay un perro que muerde a todos los perros que muerden a algun cartero 
+-Hay un solo perro que se muerde a si mismo
