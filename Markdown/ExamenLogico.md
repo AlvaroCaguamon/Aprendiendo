@@ -1,4 +1,4 @@
-Aquí está el texto convertido a formato Markdown:
+
 
 ```markdown
 1. Existe una persona en la feria que si dicha persona paga, entonces todas las personas pagan
