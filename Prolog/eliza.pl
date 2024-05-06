@@ -17,7 +17,8 @@ eliza(Input) :-
 	readln(Input1),
 	eliza(Input1), !.
 
-template([que, onda, padrino, '?'], ['Qué', onda, 'mi', amigo', 'qué', quieres, hablar', hoy, '?'], []).
+template([que, onda, padrino,], ['Que', 'onda', 'mi', 'amigo', 'que', 'quieres, hablar', 'hoy', '?'], []).
+template([buenas, noches, mi, rey, '.'], ['Buenas', noches, 'mi', rey', ',', 'que', descanses, '.'], []).
 
 
 template([hola, mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [4]).
