@@ -1,5 +1,9 @@
 
 
+```markdown
+# Relaciones Familiares
+
+```
 padre(gilberto, alvaro).
 padre(gilberto, armando).
 padre(gilberto, gilbertojr).
@@ -16,14 +20,30 @@ padre(rosa, teresita).
 padre(camilo, carmen).  
 padre(camilo, dolores).
 padre(camilo, teresita).
+```
 
-abuelo(X, Y):-padre(X, Z), padre(Z,Y).
+## Reglas de Consulta
 
-% Regla para determinar los hermanos
-hermano(X, Y):- padre(Z, X), padre(Z, Y), X \= Y.
+### Abuelo
 
-% Regla para determinar los tíos
-tio(X, Y):- padre(Z, Y), hermano(X, Z).
+```
+abuelo(X, Y) :- padre(X, Z), padre(Z, Y).
+```
 
-% Regla para determinar los nietos
-nieto(X, Y):- abuelo(Y, X).
+### Hermano
+
+```
+hermano(X, Y) :- padre(Z, X), padre(Z, Y), X \= Y.
+```
+
+### Tío
+
+```
+tio(X, Y) :- padre(Z, Y), hermano(X, Z).
+```
+
+### Nieto
+
+```
+nieto(X, Y) :- abuelo(Y, X).
+```
