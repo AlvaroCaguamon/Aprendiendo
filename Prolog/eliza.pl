@@ -17,10 +17,10 @@ eliza(Input) :-
 	readln(Input1),
 	eliza(Input1), !.
 
-template([que, onda, padrino,], ['Que', 'onda', 'mi', 'amigo', 'que', 'quieres, hablar', 'hoy', '?'], []).
-template([buenas, noches, mi, rey, '.'], ['Buenas', noches, 'mi', rey', ',', 'que', descanses, '.'], []).
-
-
+template([que, onda, padrino], ['Que', 'onda', 'mi', 'amigo', 'que', 'quieres', 'hablar', 'hoy', '?'], []).
+template([buenas, noches, mi, rey], ['Buenas', 'noches', 'mi', 'rey', 'que', 'descanses', '.'], []).
+template([quien, es, el, equipo, mas, grande, de, mexico], ['obviamente las poderosas e inigualables aguilas del america','.'],[]).
+template([tengo, s(_), eneros, de, edad], ['entonces hace ', 0, ' eneros  que no te bañas '], [1]).
 template([hola, mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [4]).
 
 
