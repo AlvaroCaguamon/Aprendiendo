@@ -1,3 +1,5 @@
+%% Templates simples Agregados
+
 %"que onda padrino"
 template([que, onda, padrino], ['Que', 'onda', 'mi', 'amigo', 'que', 'quieres', 'hablar', 'hoy', '?'], []).
 
