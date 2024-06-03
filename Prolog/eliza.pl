@@ -27,49 +27,40 @@ template([tengo, s(_), eneros, de, edad], ['entonces hace ', 0, ' eneros  que no
 %nombre
 template([hola, mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [4]).
 % "Como estas"
-template([como, estas], ['Estoy', 'muy', 'aburrida', ',', '¿y', 'tú', '?'], []).
+template([como, estas], ['Estoy', 'muy', 'aburrida', 'y', 'tu', '?'], []).
 %"Que haces "
-template([que, haces], ['Hoy', 'estoy', 'contestando', 'preguntas', 'como', 
-'siempre' '?'], []).
+template([que, haces], ['Hoy', 'estoy', 'contestando', 'preguntas', 'como', 'siempre' ,'?'], []).
 % "Me duele la cabeza"
 template([me, duele, la, cabeza], ['un parazetamol cura todo'], []).
 % "Estoy aburrido"
-template([estoy, aburrido], ['¿Qué', 'te', 'gustaría', 'hacer', 'para', 'divertirte', '?'], []).
+template([estoy, aburrido], ['¿Que', 'te', 'gustaria', 'hacer', 'para', 'divertirte', '?'], []).
 %  "Tengo hambre"
 template([tengo, hambre], ['¿Tienes', 'ganas', 'de', 'comer', 'algo', '?'], []).
 %  "Te amo"
 template([te, amo], ['Yo', 'no', 'puedo', 'amar', ':(', '.'], []).
 %  "Como puedo ayudarte"
-template([como, puedo, ayudarte], ['Estoy', 'aquí', 'para', 'ayudarte', 'a', 'ti',], []).
+template([como, puedo, ayudarte], ['Estoy', 'aqui', 'para', 'ayudarte', 'a', 'ti'], []).
 %  "Que opinas de xochitl"
 template([que, opinas, de], ['que si gana se hunde mas el pais'], []).
 % "Tengo miedo"
 template([tengo, miedo], ['A los miedosos no les hacen corridos '], []).
 %  "Me siento feliz"
-template([me, siento, feliz], ['¡Me', 'alegra', 'mucho', 'oírlo', '!', '¿Qué', 'te', 'hace', 'sentir', 'feliz', '?'], []).
+template([me, siento, feliz], ['Me', 'alegra', 'mucho', 'oirlo', '¿Que', 'te', 'hace', 'sentir', 'feliz', '?'], []).
 % "Me siento triste"
-template([me, siento, triste], ['Lamento', 'que', 'te', 'sientas', 'triste', ',', '¿hay', 'algo', 'que', 'pueda',
-'hacer', 'para', 'animarte', '?'], []).
+template([me, siento, triste], ['Lamento', 'que', 'te', 'sientas', 'triste', 'hay', 'algo', 'que', 'pueda','hacer', 'para', 'animarte', '?'], []).
 % Template para "Estoy solo"
 template([estoy, solo], ['por feo estas solo.'], []).
 % "Que piensas del futuro"
-template([que, piensas, del, futuro], ['El', 'futuro', 'está', 'lleno', 'de', 'posibilidades', ',', 'depende',
- 'de', 'nosotros', 'crearlo', 'de', 'la', 'mejor', 'manera', 'posible', '.'], []).
+template([que, piensas, del, futuro], ['El', 'futuro', 'esta', 'lleno', 'de', 'posibilidades', 'depende','de', 'nosotros', 'crearlo', 'de', 'la', 'mejor', 'manera', 'posible', '.'], []).
 % "Que es el sentido de la vida"
-template([que, es, el, sentido, de, la, vida], ['El', 'sentido', 'de', 'la', 'vida', 'es', 
-'Hacer billetes y ser exitoso '], []).
+template([que, es, el, sentido, de, la, vida], ['El', 'sentido', 'de', 'la', 'vida', 'es', 'Hacer billetes y ser exitoso '], []).
 % "Crees en dios"
-template([crees, en, dios], ['La', 'fe', 'es', 'una', 'cuestión', 'personal',  'de', 'tus', 'creencias', '.'], []).
+template([crees, en, dios], ['La', 'fe', 'es', 'una', 'cuestion', 'personal',  'de', 'tus', 'creencias', '.'], []).
 %  "Cual es tu comida favorita"
 template([cual, es, tu, comida, favorita], ['Mi', 'comida', 'favorita', 'es','los tacos' ], []).
 
 
-
-
-template([buendia, mi, nombre, es, s(_), '.'], ['buen dia', 'Como', estas, tu, 0, '?'], [4]).
-
-template([hola, ',', mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [5]).
-template([buendia, ',', mi, nombre, es, s(_), '.'], ['Buendia', 'Como', estas, tu, 0, '?'], [5]).
+%%----------------------templeates con 2 y 3 variables-------------------
 
 template([hola, _], ['Hola', 'como', estas, tu, '?'], []).
 template([buendia, _], ['Buendia', 'Como', estas, tu, '?'], []).

@@ -49,3 +49,35 @@ template([crees, en, dios], ['La', 'fe', 'es', 'una', 'cuestión', 'personal',  
 
 %  "Cual es tu comida favorita"
 template([cual, es, tu, comida, favorita], ['Mi', 'comida', 'favorita', 'es','los tacos' ], []).
+%------------------------------------------------------------------------------
+
+
+template([mi, cancion, favorita, es, s(_), mi, artista, favorito, es, s(_), y, mi, album, favorito, es, s(_), '.'], ['Que', 'excelente', 'eleccion'], [4, 10, 16]).
+
+template([mi, freestyler, favorito, es, s(_), su, nombre, es, s(_), y, es, de, s(_), '.'], ['de hecho', 0. 'es muy buen representante de ',2,'no sabia que su nombre era',1 ], [4, 10, 16]).
+
+template([mis, ejercicios, favoritos, de, gimnasio, son, s(_), s(_), y, s(_), '.'], [''], [8, 9, 10]).
+
+template([mi, top, 3, consolas, favoritas, son, s(_), s(_), y, s(_), '.'], ['Qué', genial', cuéntame', más, sobre, tus, consolas, 'favoritas', '?'], [6, 7, 8]).
+
+template([mi, top, 3, materias, difíciles, son, s(_), s(_), y, s(_), '.'], ['Ah', veo', podrías, explicar, un, poco, más, sobre, las, materias, que, encuentras, difíciles', '?'], [6, 7, 8]).
+
+%---------------------------------------------------------------------------------------------
+
+template([buendia, mi, nombre, es, s(_), y, soy, de, s(_) '.'], ['buen dia', 'Como', estas, tu, 0, 1, es, un, lindo, lugar], [4,8]).
+
+template([hola, mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [5]).
+
+
+
+
+
+
+template([mi, cancion, favorita, es, s(_), mi, artista, favorito, es, s(_), y, mi, album, favorito, es, s(_), '.'], ['Que', 'excelente', 'eleccion'], [4, 10, 16]).
+
+template([mi, freestyler, favorito, es, s(_), su, nombre, es, s(_), y, es, de, s(_), '.'], ['de hecho', 0. 'es muy buen representante de ',2,'no sabia que su nombre era',1 ], [4, 10, 16]).
+
+
+
+
+
