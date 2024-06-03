@@ -1,4 +1,4 @@
-# BRONQUITIS: UNA INVESTIGACIÓN PROFUNDA
+# BRONQUITIS:
 
 ## ¿Qué es la bronquitis?
 
@@ -92,7 +92,7 @@ La mejor manera de prevenir la bronquitis es evitar los irritantes que pueden da
 
 ---
 
-# COLITIS ULCEROSA: UNA INVESTIGACIÓN PROFUNDA
+# COLITIS ULCEROSA: 
 
 ## ¿Qué es la colitis ulcerosa?
 
