@@ -23,6 +23,7 @@ eliza(Input) :-
 :- discontiguous multiSintoma/3.
 :- discontiguous causaEs/2.
 :- discontiguous tratamientoEs/2.
+:- discontiguous replace0/5.
 
 
 %"que onda padrino"
@@ -466,6 +467,151 @@ tratamientocolera('rehidratacion').
 tratamientocolera('antibioticos').
 tratamientocolera('soluciones electroliticas').
 
+
+
+
+%%--------------------------------------Arbol genealogico------------------------------------------------
+padre(gilberto, alvaro).
+padre(gilberto, armando).
+padre(gilberto, gilbertojr).
+padre(alvaro, erik).
+padre(alvaro, alvaro). 
+padre(armando, mandin).
+padre(armando, fernando).
+padre(cesar, erik).
+padre(alejandra, erik).
+padre(chucho, erik).
+padre(rosa, carmen).
+padre(rosa, dolores).
+padre(rosa, teresita).
+padre(camilo, carmen).  
+padre(camilo, dolores).
+padre(camilo, teresita).
+
+% Reglas del árbol genealógico
+abuelo(X, Y):- padre(X, Z), padre(Z, Y).
+
+hermano(X, Y):- padre(Z, X), padre(Z, Y), X \= Y.
+
+tio(X, Y):- padre(Z, Y), hermano(X, Z).
+
+nieto(X, Y):- abuelo(Y, X).
+
+hijo(X, Y):- padre(Y, X).
+
+padres(X, Y, Z):- padre(Y, X), padre(Z, X).
+
+abuelo_de(X, Y):- padre(Z, X), padre(Y, Z).
+
+% Templates y flags para Eliza
+
+% Consulta de padre
+template([quien, es, el, padre, de, _], [flagPadre], [5]).
+template([dime, quien, es, el, padre, de, _], [flagPadre], [6]).
+template([quien, es, mi, padre], [flagPadre], [4]).
+
+% Consulta de abuelo
+template([quien, es, el, abuelo, de, _], [flagAbuelo], [5]).
+template([dime, quien, es, el, abuelo, de, _], [flagAbuelo], [6]).
+
+% Consulta de hermanos
+template([quienes, son, los, hermanos, de, _], [flagHermanos], [5]).
+template([dime, quienes, son, los, hermanos, de, _], [flagHermanos], [6]).
+
+% Consulta de tíos
+template([quienes, son, los, tios, de, _], [flagTios], [5]).
+template([dime, quienes, son, los, tios, de, _], [flagTios], [6]).
+
+% Consulta de nietos
+template([quienes, son, los, nietos, de, _], [flagNietos], [5]).
+template([dime, quienes, son, los, nietos, de, _], [flagNietos], [6]).
+
+% Consulta de hijos
+template([quienes, son, los, hijos, de, _], [flagHijos], [5]).
+template([dime, quienes, son, los, hijos, de, _], [flagHijos], [6]).
+
+% Consulta de padres
+template([quienes, son, los, padres, de, _], [flagPadres], [5]).
+template([dime, quienes, son, los, padres, de, _], [flagPadres], [6]).
+
+% Flags y respuestas
+% FlagPadre
+padreEs(X, R):- padre(Y, X), R = [Y, es, el, padre, de, X].
+padreEs(X, R):- \+padre(_, X), R = ['No', se, quien, es, el, padre, de, X].
+
+% FlagAbuelo
+abueloEs(X, R):- abuelo(Y, X), R = [Y, es, el, abuelo, de, X].
+abueloEs(X, R):- \+abuelo(_, X), R = ['No', se, quien, es, el, abuelo, de, X].
+
+% FlagHermanos
+hermanosEs(X, R):- findall(Y, hermano(Y, X), Lista), R = [Lista, son, los, hermanos, de, X].
+hermanosEs(X, R):- \+hermano(_, X), R = ['No', se, quien, son, los, hermanos, de, X].
+
+% FlagTios
+tiosEs(X, R):- findall(Y, tio(Y, X), Lista), R = [Lista, son, los, tios, de, X].
+tiosEs(X, R):- \+tio(_, X), R = ['No', se, quien, son, los, tios, de, X].
+
+% FlagNietos
+nietosEs(X, R):- findall(Y, nieto(Y, X), Lista), R = [Lista, son, los, nietos, de, X].
+nietosEs(X, R):- \+nieto(_, X), R = ['No', se, quien, son, los, nietos, de, X].
+
+% FlagHijos
+hijosEs(X, R):- findall(Y, hijo(Y, X), Lista), R = [Lista, son, los, hijos, de, X].
+hijosEs(X, R):- \+hijo(_, X), R = ['No', se, quien, son, los, hijos, de, X].
+
+% FlagPadres
+padresEs(X, R):- findall([Y, Z], padres(X, Y, Z), Lista), R = [Lista, son, los, padres, de, X].
+padresEs(X, R):- \+padres(X, _, _), R = ['No', se, quienes, son, los, padres, de, X].
+
+
+ %FlagPadre
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagPadre,
+    padreEs(Atom, R).
+
+% FlagAbuelo
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagAbuelo,
+    abueloEs(Atom, R).
+
+% FlagHermanos
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagHermanos,
+    hermanosEs(Atom, R).
+
+% FlagTios
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagTios,
+    tiosEs(Atom, R).
+
+% FlagNietos
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagNietos,
+    nietosEs(Atom, R).
+
+% FlagHijos
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagHijos,
+    hijosEs(Atom, R).
+
+% FlagPadres
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagPadres,
+    padresEs(Atom, R).
 
 %%----------------------templeates con 2 y 3 variables-------------------
 
