@@ -1,83 +1,236 @@
-% "Como estas"
-template([como, estas], ['Estoy', 'muy', 'aburrida', ',', '¿y', 'tú', '?'], []).
+%%---------------------causas, sintomas y demas colitis ulcerosa ------------------------------
 
-%"Que haces "
-template([que, haces], ['Hoy', 'estoy', 'contestando', 'preguntas', 'como', 
-'siempre' '?'], []).
+%% sintomas colitis
+	
+	template([dime, los, sintomas, de, colitis, '.'], ListaSintomas, []):-
+		findall(Sintomas, sintomascolitis(Sintomas), ListaSintomas).
+	
+	template([cuales, son, los, sintomas, de, colitis, '.'], ListaSintomas, []):-
+		findall(Sintomas, sintomascolitis(Sintomas), ListaSintomas).
+	
+	template([sintomas, de, colitis, '.'], ListaSintomas, []):-
+		findall(Sintomas, sintomascolitis(Sintomas), ListaSintomas).
+	
+	
+	
+	% Sintomas del colitis interactivas 
+	
+	template([s(_), es, un, sintoma, '.'], [flagSintomas], [0]).%%.
+	template([s(_), es, un, sintoma, '?'], [flagSintomas], [0]).
+	template([el, s(_), es, un, sintoma, del, colitis, '.'], [flagSintomas], [1]).
+	template([el, s(_), es, un, sintoma, del, colitis, '?'], [flagSintomas], [1]).
+	template([la, s(_), es, un, sintoma, del, colitis, '.'], [flagSintomas], [1]).
+	template([la, s(_), es, un, sintoma, del, colitis, '?'], [flagSintomas], [1]).
+	template([los, s(_), es, un, sintoma, del, colitis, '.'], [flagSintomas], [1]).
+	template([los, s(_), es, un, sintoma, del, colitis, '?'], [flagSintomas], [1]).
+	template([las, s(_), es, un, sintoma, del, colitis, '.'], [flagSintomas], [1]).
+	template([las, s(_), es, un, sintoma, del, colitis, '?'], [flagSintomas], [1]).
+	template([s(_), es, un, sintoma, del, colitis, '.'], [flagSintomas], [0]).
+	template([s(_), es, un, sintoma, del, colitis, '?'], [flagSintomas], [0]).
 
-% "Me duele la cabeza"
-template([me, duele, la, cabeza], ['un parazetamol cura todo'], []).
-
-% "Estoy aburrido"
-template([estoy, aburrido], ['¿Qué', 'te', 'gustaría', 'hacer', 'para', 'divertirte', '?'], []).
-
-%  "Tengo hambre"
-template([tengo, hambre], ['¿Tienes', 'ganas', 'de', 'comer', 'algo', '?'], []).
-
-%  "Te amo"
-template([te, amo], ['Yo', 'no', 'puedo', 'amar', ':(', '.'], []).
-
-%  "Como puedo ayudarte"
-template([como, puedo, ayudarte], ['Estoy', 'aquí', 'para', 'ayudarte', 'a', 'ti',], []).
-
-%  "Que opinas de xochitl"
-template([que, opinas, de], ['que si gana se hunde mas el pais'], []).
-
-% "Tengo miedo"
-template([tengo, miedo], ['A los miedosos no les hacen corridos '], []).
-
-%  "Me siento feliz"
-template([me, siento, feliz], ['¡Me', 'alegra', 'mucho', 'oírlo', '!', '¿Qué', 'te', 'hace', 'sentir', 'feliz', '?'], []).
-
-% "Me siento triste"
-template([me, siento, triste], ['Lamento', 'que', 'te', 'sientas', 'triste', ',', '¿hay', 'algo', 'que', 'pueda',
-'hacer', 'para', 'animarte', '?'], []).
-
-% Template para "Estoy solo"
-template([estoy, solo], ['por feo estas solo.'], []).
-
-% "Que piensas del futuro"
-template([que, piensas, del, futuro], ['El', 'futuro', 'está', 'lleno', 'de', 'posibilidades', ',', 'depende',
- 'de', 'nosotros', 'crearlo', 'de', 'la', 'mejor', 'manera', 'posible', '.'], []).
-
-% "Que es el sentido de la vida"
-template([que, es, el, sentido, de, la, vida], ['El', 'sentido', 'de', 'la', 'vida', 'es', 
-'Hacer billetes y ser exitoso '], []).
-
-% "Crees en dios"
-template([crees, en, dios], ['La', 'fe', 'es', 'una', 'cuestión', 'personal',  'de', 'tus', 'creencias', '.'], []).
-
-%  "Cual es tu comida favorita"
-template([cual, es, tu, comida, favorita], ['Mi', 'comida', 'favorita', 'es','los tacos' ], []).
-%------------------------------------------------------------------------------
+	template([tengo, s(_), ',', (_), y, (_), '.'], [flagMultiSintoma], [1, 3, 5]).
 
 
-template([mi, cancion, favorita, es, s(_), mi, artista, favorito, es, s(_), y, mi, album, favorito, es, s(_), '.'], ['Que', 'excelente', 'eleccion'], [4, 10, 16]).
+    % Causas de colitis
+	
+	template([causas, del, colitis, '.'], ListaCausas, []):-
+		findall(Causas, causascolitis(Causas), ListaCausas).
 
-template([mi, freestyler, favorito, es, s(_), su, nombre, es, s(_), y, es, de, s(_), '.'], ['de hecho', 0. 'es muy buen representante de ',2,'no sabia que su nombre era',1 ], [4, 10, 16]).
+	template([dime, las, causas, del, colitis, '.'], ListaCausas, []):-
+		findall(Causas, causascolitis(Causas), ListaCausas).
 
-template([mis, ejercicios, favoritos, de, gimnasio, son, s(_), s(_), y, s(_), '.'], [''], [8, 9, 10]).
+	template([cuales, son, las, causas, del, colitis, '.'], ListaCausas, []):-
+		findall(Causas, causascolitis(Causas), ListaCausas).
 
-template([mi, top, 3, consolas, favoritas, son, s(_), s(_), y, s(_), '.'], ['Qué', genial', cuéntame', más, sobre, tus, consolas, 'favoritas', '?'], [6, 7, 8]).
+	% Causas del colitis
+	template([la, s(_), es, una, causa, '.'], [flagCausas], [1]).
+	template([la, s(_), es, una, causa, '?'], [flagCausas], [1]).
+	template([los, s(_), son, una, causa, '.'], [flagCausas], [1]).
+	template([las, s(_), son, una, causa, '.'], [flagCausas], [1]).
+	template([los, s(_), son, una, causa, '?'], [flagCausas], [1]).
+	template([las, s(_), son, una, causa, '?'], [flagCausas], [1]).
+	template([s(_), es, una, causa, '.'], [flagCausas], [0]).
+	template([s(_), es, una, causa, '?'], [flagCausas], [0]).
+	template([los, s(_), son, una, causa, del, colitis, '.'], [flagCausas], [1]).%%
+	template([las, s(_), son, una, causa, del, colitis, '.'], [flagCausas], [1]).
+	template([los, s(_), son, una, causa, del, colitis, '?'], [flagCausas], [1]).
+	template([las, s(_), son, una, causa, del, colitis, '?'], [flagCausas], [1]).
+	template([s(_), es, una, causa, del, colitis, '.'], [flagCausas], [0]).
+	template([s(_), es, una, causa, del, colitis, '?'], [flagCausas], [0]).
 
-template([mi, top, 3, materias, difíciles, son, s(_), s(_), y, s(_), '.'], ['Ah', veo', podrías, explicar, un, poco, más, sobre, las, materias, que, encuentras, difíciles', '?'], [6, 7, 8]).
+	% Tratamientos de colitis
+	
+	template([tratamientos, del, colitis, '.'], ['El tratamiento de la colitis depende del tipo y la gravedad de la enfermedad. La colitis aguda generalmente no requiere tratamiento
+     específico y se resuelve por sí sola en unas pocas semanas. Sin embargo, los síntomas pueden tratarse con medicamentos de venta libre, 
+    como analgésicos para el dolor en el pecho y medicamentos para la tos'], []).
+	
+	template([dime, los, tratamientos, del, colitis, '.'], ListaTratamientos, []):-
+		findall(Tratamientos, tratamientocolitis(Tratamientos), ListaTratamientos).
 
-%---------------------------------------------------------------------------------------------
+	template([cuales, son, los, tratamientos, del, colitis, '.'], ListaTratamientos, []):-
+		findall(Tratamientos, tratamientocolitis(Tratamientos), ListaTratamientos).
 
-template([buendia, mi, nombre, es, s(_), y, soy, de, s(_) '.'], ['buen dia', 'Como', estas, tu, 0, 1, es, un, lindo, lugar], [4,8]).
+	% Tratamientos de colitis
+	
+	template([la, s(_), es, un, tratamiento, para, el, colitis, '.'], [flagTratamientos], [1]).
+	template([el, s(_), es, un, tratamiento, para, el, colitis, '.'], [flagTratamientos], [1]).%%
+	template([las, s(_), es, un, tratamiento, para, el, colitis, '.'], [flagTratamientos], [1]).
+	template([los, s(_), es, un, tratamiento, para, el, colitis, '.'], [flagTratamientos], [1]).
+	template([s(_), es, un, tratamiento, para, el, colitis, '.'], [flagTratamientos], [0]).
+	
+	template([s(_), es, un, tratamiento, '?'], [flagSintomas], [0]).
+	template([la, s(_), es, un, tratamiento, para, el, colitis, '?'], [flagTratamientos], [1]).
+	template([el, s(_), es, un, tratamiento, para, el, colitis, '?'], [flagTratamientos], [1]).
+	template([las, s(_), es, un, tratamiento, para, el, colitis, '?'], [flagTratamientos], [1]).
+	template([los, s(_), es, un, tratamiento, para, el, colitis, '?'], [flagTratamientos], [1]).
+	template([s(_), es, un, tratamiento, para, el, colitis, '?'], [flagSintomas], [0]).
 
-template([hola, mi, nombre, es, s(_), '.'], ['Hola', 0, 'Como', estas, tu, '?'], [5]).
+
+% FlagSintomas colitis
+	sintomaEs(X, R):- sintomascolitis(X), R = ['Claro', X, es, un, sintoma, del, 'colitis', mas, sin, embargo, recuerda, que, el, 'colitis', requiere, diagnostico, medico].
+	sintomaEs(X, R):- \+sintomascolitis(X), R = ['No', X, no, es, un, sintoma, del, 'colitis'].
+	sintomascolitis('Dificultad para respirar').
+	sintomascolitis('SangradoRectal').
+	sintomascolitis('diarrea').
+	sintomascolitis('Tenesmo').
+	sintomascolitis('dolorPecho').
+	sintomascolitis('perdidadepeso').
+	sintomascolitis('fatiga').
+	
 
 
 
+% Multisintoma colitis
+	multiSintomaES(X, Y, Z, R):- multiSintoma(X, Y, Z), R = ['Claro', X, Y, y, Z, son, sintomas, de, colitis].
+	multiSintomaES(X, Y, Z, R):- \+multiSintoma(X, Y, Z), R = ['No', X, Y, y, Z, no, son, sintomas, de, colitis].
+	multiSintoma('diarrea', 'sangradoRectal', 'fatiga').
+
+	% FlagCausas colitis
+	causaEs(X, R):- causascolitis(X), R = ['Si', X, es, una, causa, del, 'colitis'].
+	causaEs(X, R):- \+causascolitis(X), R = ['No', X, no, es, una, causa, del, 'colitis'].
+	causascolitis('genetica').
+	causascolitis('sistemainmunologico').
+	causascolitis('estres').
+
+	% FlagTratamientos colitis
+	tratamientoEs(X, R):- tratamientocolitis(X), R = ['Si', X, es, un, tratamiento, del, 'colitis'].
+	tratamientoEs(X, R):- \+tratamientocolitis(X), R = ['No', X, no, es, un, tratamiento, del, 'colitis'].
+	tratamientocolitis('aminosalicilatos').
+	tratamientocolitis('corticosteroides').
+	tratamientocolitis('inmunomoduladores').
+	tratamientocolitis('Cirugia').
+	tratamientocolitis('evitarGrasa').
+	tratamientocolitis('noFumar').
+
+%%_----------------------------------------------------------
 
 
+%%---------------------causas, sintomas y demas colera ------------------------------
 
-template([mi, cancion, favorita, es, s(_), mi, artista, favorito, es, s(_), y, mi, album, favorito, es, s(_), '.'], ['Que', 'excelente', 'eleccion'], [4, 10, 16]).
+%% sintomas colera
 
-template([mi, freestyler, favorito, es, s(_), su, nombre, es, s(_), y, es, de, s(_), '.'], ['de hecho', 0. 'es muy buen representante de ',2,'no sabia que su nombre era',1 ], [4, 10, 16]).
+template([dime, los, sintomas, de, colera, '.'], ListaSintomas, []):-
+    findall(Sintomas, sintomascolera(Sintomas), ListaSintomas).
 
+template([cuales, son, los, sintomas, de, colera, '.'], ListaSintomas, []):-
+    findall(Sintomas, sintomascolera(Sintomas), ListaSintomas).
 
+template([sintomas, de, colera, '.'], ListaSintomas, []):-
+    findall(Sintomas, sintomascolera(Sintomas), ListaSintomas).
 
+% Sintomas del colera interactivas
 
+template([s(_), es, un, sintoma, '.'], [flagSintomas], [0]).
+template([s(_), es, un, sintoma, '?'], [flagSintomas], [0]).
+template([el, s(_), es, un, sintoma, del, colera, '.'], [flagSintomas], [1]).
+template([el, s(_), es, un, sintoma, del, colera, '?'], [flagSintomas], [1]).
+template([la, s(_), es, un, sintoma, del, colera, '.'], [flagSintomas], [1]).
+template([la, s(_), es, un, sintoma, del, colera, '?'], [flagSintomas], [1]).
+template([los, s(_), es, un, sintoma, del, colera, '.'], [flagSintomas], [1]).
+template([los, s(_), es, un, sintoma, del, colera, '?'], [flagSintomas], [1]).
+template([las, s(_), es, un, sintoma, del, colera, '.'], [flagSintomas], [1]).
+template([las, s(_), es, un, sintoma, del, colera, '?'], [flagSintomas], [1]).
+template([s(_), es, un, sintoma, del, colera, '.'], [flagSintomas], [0]).
+template([s(_), es, un, sintoma, del, colera, '?'], [flagSintomas], [0]).
 
+template([tengo, s(_), ',', (_), y, (_), '.'], [flagMultiSintoma], [1, 3, 5]).
+
+% Causas de colera
+
+template([causas, del, colera, '.'], ListaCausas, []):-
+    findall(Causas, causascolera(Causas), ListaCausas).
+
+template([dime, las, causas, del, colera, '.'], ListaCausas, []):-
+    findall(Causas, causascolera(Causas), ListaCausas).
+
+template([cuales, son, las, causas, del, colera, '.'], ListaCausas, []):-
+    findall(Causas, causascolera(Causas), ListaCausas).
+
+% Causas del colera
+template([la, s(_), es, una, causa, '.'], [flagCausas], [1]).
+template([la, s(_), es, una, causa, '?'], [flagCausas], [1]).
+template([los, s(_), son, una, causa, '.'], [flagCausas], [1]).
+template([las, s(_), son, una, causa, '.'], [flagCausas], [1]).
+template([los, s(_), son, una, causa, '?'], [flagCausas], [1]).
+template([las, s(_), son, una, causa, '?'], [flagCausas], [1]).
+template([s(_), es, una, causa, '.'], [flagCausas], [0]).
+template([s(_), es, una, causa, '?'], [flagCausas], [0]).
+template([los, s(_), son, una, causa, del, colera, '.'], [flagCausas], [1]).
+template([las, s(_), son, una, causa, del, colera, '.'], [flagCausas], [1]).
+template([los, s(_), son, una, causa, del, colera, '?'], [flagCausas], [1]).
+template([las, s(_), son, una, causa, del, colera, '?'], [flagCausas], [1]).
+template([s(_), es, una, causa, del, colera, '.'], [flagCausas], [0]).
+template([s(_), es, una, causa, del, colera, '?'], [flagCausas], [0]).
+
+% Tratamientos de colera
+
+template([tratamientos, del, colera, '.'], ['El tratamiento del cólera incluye la rehidratación con soluciones de electrolitos y agua, y en casos graves, el uso de antibióticos para reducir la duración de la enfermedad.'], []).
+
+template([dime, los, tratamientos, del, colera, '.'], ListaTratamientos, []):-
+    findall(Tratamientos, tratamientocolera(Tratamientos), ListaTratamientos).
+
+template([cuales, son, los, tratamientos, del, colera, '.'], ListaTratamientos, []):-
+    findall(Tratamientos, tratamientocolera(Tratamientos), ListaTratamientos).
+
+% Tratamientos de colera
+
+template([la, s(_), es, un, tratamiento, para, el, colera, '.'], [flagTratamientos], [1]).
+template([el, s(_), es, un, tratamiento, para, el, colera, '.'], [flagTratamientos], [1]).
+template([las, s(_), es, un, tratamiento, para, el, colera, '.'], [flagTratamientos], [1]).
+template([los, s(_), es, un, tratamiento, para, el, colera, '.'], [flagTratamientos], [1]).
+template([s(_), es, un, tratamiento, para, el, colera, '.'], [flagTratamientos], [0]).
+
+template([s(_), es, un, tratamiento, '?'], [flagSintomas], [0]).
+template([la, s(_), es, un, tratamiento, para, el, colera, '?'], [flagTratamientos], [1]).
+template([el, s(_), es, un, tratamiento, para, el, colera, '?'], [flagTratamientos], [1]).
+template([las, s(_), es, un, tratamiento, para, el, colera, '?'], [flagTratamientos], [1]).
+template([los, s(_), es, un, tratamiento, para, el, colera, '?'], [flagTratamientos], [1]).
+template([s(_), es, un, tratamiento, para, el, colera, '?'], [flagSintomas], [0]).
+
+% FlagSintomas colera
+sintomaEs(X, R):- sintomascolera(X), R = ['Claro', X, es, un, sintoma, del, 'colera', mas, sin, embargo, recuerda, que, el, 'colera', requiere, diagnostico, medico].
+sintomaEs(X, R):- \+sintomascolera(X), R = ['No', X, no, es, un, sintoma, del, 'colera'].
+sintomascolera('diarrea').
+sintomascolera('vomitos').
+sintomascolera('deshidratacion').
+sintomascolera('calambres').
+sintomascolera('sed intensa').
+
+% Multisintoma colera
+multiSintomaES(X, Y, Z, R):- multiSintoma(X, Y, Z), R = ['Claro', X, Y, y, Z, son, sintomas, de, colera].
+multiSintomaES(X, Y, Z, R):- \+multiSintoma(X, Y, Z), R = ['No', X, Y, y, Z, no, son, sintomas, de, colera].
+multiSintoma('diarrea', 'vomitos', 'deshidratacion').
+
+% FlagCausas colera
+causaEs(X, R):- causascolera(X), R = ['Si', X, es, una, causa, del, 'colera'].
+causaEs(X, R):- \+causascolera(X), R = ['No', X, no, es, una, causa, del, 'colera'].
+causascolera('agua contaminada').
+causascolera('alimentos contaminados').
+causascolera('higiene deficiente').
+
+% FlagTratamientos colera
+tratamientoEs(X, R):- tratamientocolera(X), R = ['Si', X, es, un, tratamiento, del, 'colera'].
+tratamientoEs(X, R):- \+tratamientocolera(X), R = ['No', X, no, es, un, tratamiento, del, 'colera'].
+tratamientocolera('rehidratacion').
+tratamientocolera('antibioticos').
+tratamientocolera('soluciones electroliticas').

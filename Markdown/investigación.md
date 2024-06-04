@@ -1,6 +1,6 @@
 # BRONQUITIS:
 
-## ¿Qué es la bronquitis?
+## ¿Que es la bronquitis?
 
 La bronquitis es una inflamación de los bronquios, las vías respiratorias que transportan aire hacia adentro y fuera de los pulmones. Esta inflamación causa hinchazón y estrechamiento de las vías respiratorias, lo que dificulta la respiración y produce tos, a menudo con mucosidad. La bronquitis puede ser aguda o crónica.
 
